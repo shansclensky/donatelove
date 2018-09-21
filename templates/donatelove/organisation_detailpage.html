@@ -1,0 +1,11 @@
+​{% extends "base.html" %}
+{% load org_tags %}
+{% block content %}
+<h1>{{ organisation }}</h1>
+<ul>
+    <li><a href="{% url "organisation_edit" organisation.pk %}">Edit</a></li>
+    <li><a href="{% url "organisation_delete" organisation.pk %}">Delete</a></li>
+    <li><a href="{% url "organisation_user_add" organisation.pk %}">Add a member</a></li>
+</ul>
+{% organisation_users organisation %}
+{% endblock %}

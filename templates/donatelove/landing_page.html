@@ -1,0 +1,11 @@
+{%extends "base.html" %}
+{%block title %}Welcome to DonateLove{% endblock %}
+{%block head %}Welcome to DonateLove{% endblock %}
+{%block content %}
+{% if user.username %}
+<p>Welcome {{ user.username }}!You are Donating Love thanks in advance for restoring faith in humanity</p>
+{% else %}
+<p>Welcome anonymous user!
+You need to login</p><br/>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+    {% for organisation_user in organisation_users %}
+    {{ user.username }}
+    {{ user.email }}
+    {{ user.first_name }}
+    {{ user.last_name }}
+    <li>
+    <a href="{{ organisation_user.get_absolute_url }}">{{ organisation_user }}</a>
+    {% if not organisation_user.user.is_active %}Send reminder{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
