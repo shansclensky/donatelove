@@ -10,9 +10,7 @@ from donatelove.views import (
     register_page_main,
     organisation_detailpage,
     my_view,
-    organisation_listpage,
-    payment_page,
-
+    organisation_listpage
 )
 
 urlpatterns = [
@@ -24,5 +22,5 @@ urlpatterns = [
     url(r'^my_view/$',my_view,name='my_view'),
     url(r'^organisation_detailpage/(?P<id>[0-9]+)/$',organisation_detailpage,name ='org_det'),
     url(r'^organisation_listpage/$',organisation_listpage,name='org_list'),
-    url(r'^payment_page/$',payment_page,name='payment')
+
 ]

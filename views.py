@@ -87,6 +87,3 @@ def register_page_main(request):
 def organisation_detailpage(request, id):
     org = Organisation.objects.get(id=id)
     return render(request,'donatelove/organisation_detailpage.html', {'org': org})
-
-def payment_page(request):
-    return render(request,'payment_page.html')
