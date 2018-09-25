@@ -1,10 +1,102 @@
 ​{% extends "base.html" %}
+
+{% block extra_css %}
+<style type="text/css">
+.org-list-item {
+  margin: 5px;
+}
+
+</style>
+
+{% endblock %}
+
 {% block content %}
 <h1>organisations</h1>
+<div class="container">
+  <div class="row">
+ {% for org in organisations %}
+ <div class="col-lg-3 border border-primary org-list-item">
+    <a href="{% url 'org_det' org.id %}">
+      <h4>{{ org.name }}</h4>
+      <p>{{ org.detail|truncatewords:10 }}</p>
+    </a>
+    </div>
+ {% endfor %}
+</div>
 
-<ul>
+
+
+
+
+  {% comment %}
+  <div class="row">
+       <div class="row">
+    <article class="col-md-6">
+          <figure class="col-lg-12">
+        <a href=""><img class="img img-responsive article-img" src="http://farm1.staticflickr.com/258/18511405422_d7c67c0ff8_k.jpg"></a>
+        <figcaption class="article-caption"><h1 class="article-title"><a href="">Spacex #1</a></h1>
+        </figcaption>
+        </figure>
+        <div class="article-intro col-lg-12" style="padding-top: 10px;">
+        <strong>Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX has since developed the Falcon launch vehicle family and the Dragon spacecraft family, which both currently deliver payloads into Earth orbit..</strong>
+        </div>
+
+        </article>
+
+                <article class="col-md-6">
+            <figure class="col-lg-12">
+        <a href=""><img class="img img-responsive article-img" src="http://farm1.staticflickr.com/354/18141136234_6aee6ac0ea_k.jpg"></a>
+        <figcaption class="article-caption"><h1 class="article-title"><a href="">Tesla #2</a></h1>
+        </figcaption>
+        </figure>
+
+        <div class="article-intro col-lg-12" style="padding-top: 10px;">
+        <strong>  Tesla, Inc. (formerly Tesla Motors), founded in 2003, is an American multinational corporation based in Palo Alto, California, that specializes in electric vehicles, lithium-ion battery energy storage and solar panel manufacturing (through the subsidiary company SolarCity). As of June 2018, Tesla sells the Tesla Model S, Model X, Model 3, Powerwall and Powerpack batteries, solar panels, solar roof tiles, and related products.
+          CEO Elon Musk said that he envisions Tesla as a technology company and independent automaker, aimed at eventually offering electric cars at prices affordable to the average consumer. The company was named for the electrical engineer and physicist Nikola Tesla by company founders Martin Eberhard and Marc Tarpenning.
+
+        </strong>
+        </div>
+      </div>
+        </div>
+
+        </article>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                <article class="col-md-6">
+            <figure class="col-lg-12">
+        <a href=""><img class="img img-responsive article-img" src="http://farm1.staticflickr.com/510/18737505996_98a20bf592_k.jpg"></a>
+        <figcaption class="article-caption"><h1 class="article-title"><a href="">Hyperloop #3 </a></h1>
+        </figcaption>
+        </figure>
+        <div class="article-intro col-lg-12" style="padding-top: 10px;">
+        <strong>    A Hyperloop is a proposed mode of passenger and/or freight transportation, first used to describe an open-source vactrain design released by a joint team from Tesla and SpaceX. Drawing heavily from Robert Goddard's vactrain, a hyperloop is a sealed tube or system of tubes through which a pod may travel free of air resistance or friction conveying people or objects at high speed while being very efficient...</strong>
+        </div>
+
+        </article>
+
+                <article class="col-md-6">
+            <figure class="col-lg-12">
+        <a href=""><img class="img img-responsive article-img" src="http://farm1.staticflickr.com/346/18328027128_704280cd4c_k.jpg"></a>
+        <figcaption class="article-caption"><h1 class="article-title"><a href="">  The Boring Company #4</a></h1>
+        </figcaption>
+        </figure>
+
+        <div class="article-intro col-lg-12" style="padding-top: 10px;">
+        <strong>The Boring Company is an infrastructure and tunnel construction company founded by Elon Musk in 2016. Musk has cited difficulty with Los Angeles traffic and limitations with the current 2-D transportation network as inspiration for the project.</strong>
+        </div>
+
+        </article>
+                </div>
+  </div>
+  {% endcomment %}
+</div>
+
+<!-- <ul>
     {% for organisation in organisations %}
     <li><a href="{{ organisation.get_absolute_url }}">{{ organisation }}</a></li>
     {% endfor %}
-</ul>
+</ul> -->
 {% endblock %}

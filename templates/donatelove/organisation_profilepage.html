@@ -2,12 +2,69 @@
 {% block content %}
 <h1> {{ organisation_user }} @ {{ organisation }}</h1>
 {% if user == organisation_user.user %}This is you!{% endif %}
-<ul>
+<body>
+<div class="container">
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>Organisation Profile</h4>
+		                    <hr>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <form>
+                          <div class="form-group row">
+                            <label for="OrganisationName" class="col-4 col-form-label">OrganisationName*</label>
+                            <div class="col-8">
+                              <input id="OrganisationName" name="OrganisationName" placeholder="OrganisationName" class="form-control here" required="required" type="text">
+                            </div>
+                          </div>
+                              <div class="form-group row">
+                                <label for="location" class="col-4 col-form-label">Location</label>
+                                <div class="col-8">
+                                  <input id="location" name="location" placeholder="location" class="form-control here" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="financial status" class="col-4 col-form-label">Financial status</label>
+                                <div class="col-8">
+                                  <input id="financial status" name="financial status" placeholder="financial status" class="form-control here" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="OrganisationGrowth" class="col-4 col-form-label">OrganisationGrowth</label>
+                                <div class="col-8">
+                                  <input id="OrganisationGrowth" name="OrganisationGrowth" placeholder="OrganisationGrowth(in percentage)" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="About" class="col-4 col-form-label"> About</label>
+                                <div class="col-8">
+                                  <textarea id="About" name="About" cols="40" rows="4" class="form-control"></textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                </div>
+                              </div>
+                              </form>
+		                </div>
+		                </div>
+    		        </div>
+		    </div>
+		</div>
+	</div>
+<!-- <ul>
     <li>Name: {{ organisation_user.full_name }}</li>
     <li>Org_id: {{ organisation_user.user.org_id }}</li>
 </ul>
 <ul>
     <li><a href="{% url "organisation_user_edit" organisation.pk organisation_user.user.pk %}">Edit</a></li>
     <li><a href="{% url "organisation_user_delete" organisation.pk organisation_user.user.pk %}">Delete</a></li>
-</ul>
+</ul> -->
 {% endblock %}

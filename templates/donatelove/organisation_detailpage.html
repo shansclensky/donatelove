@@ -1,11 +1,75 @@
 ​{% extends "base.html" %}
-{% load org_tags %}
 {% block content %}
-<h1>{{ organisation }}</h1>
-<ul>
-    <li><a href="{% url "organisation_edit" organisation.pk %}">Edit</a></li>
-    <li><a href="{% url "organisation_delete" organisation.pk %}">Delete</a></li>
-    <li><a href="{% url "organisation_user_add" organisation.pk %}">Add a member</a></li>
-</ul>
-{% organisation_users organisation %}
+<h1>{{ org.name }}</h1>
+<p>{{org.detail}}</p>
+<!-- <body>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Spacex #1
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX has since developed the Falcon launch vehicle family and the Dragon spacecraft family, which both currently deliver payloads into Earth orbit.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Tesla #2
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          Tesla, Inc. (formerly Tesla Motors), founded in 2003, is an American multinational corporation based in Palo Alto, California, that specializes in electric vehicles, lithium-ion battery energy storage and solar panel manufacturing (through the subsidiary company SolarCity). As of June 2018, Tesla sells the Tesla Model S, Model X, Model 3, Powerwall and Powerpack batteries, solar panels, solar roof tiles, and related products.
+          CEO Elon Musk said that he envisions Tesla as a technology company and independent automaker, aimed at eventually offering electric cars at prices affordable to the average consumer. The company was named for the electrical engineer and physicist Nikola Tesla by company founders Martin Eberhard and Marc Tarpenning.
+          The company's Model S was the world's best-selling plug-in electric car in 2015 and 2016. Global sales of the Model S reached the 200,000 unit milestone during the fourth quarter of 2017. In September 2015, the company released its Model X, a crossover SUV. The Model 3 was released in July 2017. Tesla production passed 300,000 vehicles in February 2018.
+          Tesla operates multiple production and assembly plants, notably Gigafactory 1 near Reno, Nevada and its main vehicle manufacturing facility at Tesla Factory in Fremont, California. The Gigafactory primarily produces batteries and battery packs for Tesla vehicles and energy storage products.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Hyperloop #3
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          A Hyperloop is a proposed mode of passenger and/or freight transportation, first used to describe an open-source vactrain design released by a joint team from Tesla and SpaceX. Drawing heavily from Robert Goddard's vactrain, a hyperloop is a sealed tube or system of tubes through which a pod may travel free of air resistance or friction conveying people or objects at high speed while being very efficient.
+          Elon Musk's version of the concept, first publicly mentioned in 2012, incorporates reduced-pressure tubes in which pressurized capsules ride on air bearings driven by linear induction motors and axial compressors.
+
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           The Boring Company #4
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          The Boring Company is an infrastructure and tunnel construction company founded by Elon Musk in 2016. Musk has cited difficulty with Los Angeles traffic and limitations with the current 2-D transportation network as inspiration for the project.
+
+        </div>
+      </div>
+    </div>
+
+
+  </div> -->
+
 {% endblock %}
