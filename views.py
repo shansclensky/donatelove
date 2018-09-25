@@ -65,12 +65,12 @@ def user_profilepage(request):
 
 def register_page_main(request):
     if request.method == 'POST':
-        form = UserCreationForm(data=request.POST, instance = request.user)
+        form = UserCreationForm(data=request.POST)
         if form.is_valid():
             form.save()
     else:
-        form = UserCreationForm(instance=request.user)
-        return render(request,'registration/register.html',{'User_Creation_Form': form})
+        form = UserCreationForm()
+    return render(request,'registration/register.html',{'User_Creation_Form': form})
 
 # def register_page_main(request):
 #     form = RegistrationForm()
