@@ -29,7 +29,7 @@ def home(request):
 
 def landing_page(request):
     return redirect(reverse('org_list'))
-    # return render(request,'donatelove/home.html', {})
+
 
 def my_view(request):
     username = request.POST['username']
@@ -43,7 +43,7 @@ def my_view(request):
 def logout_page(request):
     logout(request)
     return redirect(reverse('login'))
-    # return HttpResponseRedirect(request,'landing_page.html')
+
 
 @login_required(login_url='/donatelove/login/')
 def organisation_listpage(request):
@@ -71,17 +71,6 @@ def register_page_main(request):
     else:
         form = UserCreationForm()
     return render(request,'registration/register.html',{'User_Creation_Form': form})
-
-# def register_page_main(request):
-#     form = RegistrationForm()
-#     variables = RequestContext(request, {'form': form})
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#     if form.is_valid():
-#         user = User.objects.create_user(username=form.cleaned_data['username'],password=form.cleaned_data['password1'],email=form.cleaned_data['email'])
-#         return HttpResponseRedirect('registration/register.html')
-#
-#     return render_to_response(request ,'registration/register.html',{},variables)
 
 
 def organisation_detailpage(request, id):
